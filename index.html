@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLINK X - Online Shopping</title>
+    <link rel="stylesheet" href="blinkX.css">
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <h1>Welcome to BLINK X</h1>
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="toggleLoginModal()">&times;</span>
+            <h2>Login</h2>
+            <label for="username">Enter your username</label>
+            <input type="text" id="username" placeholder="Enter Username">
+            <div>
+                <label for="email" >Email</label>
+                <input type="email" id="email" placeholder="enter your email">
+            </div>
+            
+            <div>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" placeholder="enter your password">
+            </div>
+            <div>
+                <label for="confirmpass">Confirm password</label>
+                <input type="password" id="confirmpass" placeholder="Enter the confirm password">
+            </div>
+            <button onclick="login()">Login</button>
+            </div>
+           
+    </div>
+        <p id="welcomeText"></p>
+        <button id="logoutButton" onclick="logout()" style="display:none;">Logout</button>
+        <button id="loginButton" onclick="toggleLoginModal()">Login</button>
+
+    <header>
+        <h1>Blink X</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#cart" onclick="toggleCart()">Cart (<span id="cart-count">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="Screenshot 2025-04-12 230644.png" alt="Logo" style="width: 100%; max-width: 150px;" />
+            </div>
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="#" onclick="filterProducts('all')">All Products</a></li>
+    
+            </ul>
+        </aside>
+    
+        <main>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search for products..." onkeyup="searchProducts()">
+                <button onclick="searchProducts()">Search</button>
+            </div>
+            <section class="products" id="product-list"></section>
+        </main>
+    </div>
+    
+    <section class="cart" id="cart-section">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-list"></ul>
+        <p>Total: ₹<span id="cart-total">0</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </section>
+
+    <div id="overlay" class="overlay" onclick="closeOverlay()">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">&times;</span>
+            <img id="overlay-img" src="" alt="Product Image">
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BLINKX. All rights reserved.</p>
+    </footer>
+    
+    <script src="blinkX.js"></script>
+</body>
+</html>
